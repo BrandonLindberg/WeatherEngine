@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Lexend:wght@100..900&display=swap');
+
+header {
+    font-family: 'Lexend';
+}
+
+#mainHeader {
+    text-align: center;
+}
+
+main {
+    font-family: 'Funnel Sans';
+}
+
+#searchArea {
+    text-align: center;
+}
+
+#extremesTab {
+    text-align: center;
+}
+
+footer {
+    font-family: 'Funnel Sans';
+}
