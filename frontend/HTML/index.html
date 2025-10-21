@@ -18,23 +18,26 @@
     </header>
     <main>
         <div id="searchArea">
-            <label for="searchBox">Search for a location:</label>
-            <input id="searchBox" type="text">
+            <label id="searchBoxLabel" for="searchBox">Search for a location:</label>
+            <input id="searchBox" type="text" placeholder="Location...">
+            <button>Search</button>
         </div>
-        <div id="extremesTab">
-            <p>Current Extremes</p>
-            <div>
-                <p>Hottest Location</p>
-            </div>
-            <div>
-                <p>Coldest Location</p>
-            </div>
-            <div>
-                <p>Wettest Location</p>
-            </div>
-            <div>
-                <p>Windiest Location</p>
-            </div>
+        <div id="extremeSection">
+            <p><i>Current Extremes:</i></p>
+            <section id="extremeTabHolder">
+                <div class="extremeTab">
+                    <p>Hottest Location</p>
+                </div>
+                <div class="extremeTab">
+                    <p>Coldest Location</p>
+                </div>
+                <div class="extremeTab">
+                    <p>Wettest Location</p>
+                </div>
+                <div class="extremeTab">
+                    <p>Windiest Location</p>
+                </div>
+            </section>
         </div>
     </main>
     <footer>
