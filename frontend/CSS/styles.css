@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Lexend:wght@100..900&display=swap');
 
 html {
-    background-color: darkblue;
+    background-color: var(--primary-color);
 }
 
 body {
     background-color: #474747;
-    margin: auto 0;
+    margin: 0;
 }
 
 /* Header */
@@ -17,7 +17,8 @@ header {
 
 #mainHeader {
     text-align: center;
-    background-color: darkblue;
+    background-color: var(--secondary-color);
+    border-bottom: 5px var(--primary-color) solid;
     width: 100%;
 }
 
@@ -40,13 +41,14 @@ a:link, a:visited {
 }
 
 a:hover {
-    color: var(--primary-color);
+    color: #D5573B;
 }
 
 /* Main */
 
 main {
     font-family: var(--paragraph-font);
+    min-height: 100%;
 }
 
 /* Search Box */
@@ -102,7 +104,6 @@ footer {
     font-family: var(--paragraph-font);
     color: white;
     background-color: var(--secondary-color);
-    height: 75px;
 }
 
 #footerContent {
