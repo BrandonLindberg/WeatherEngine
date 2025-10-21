@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Lexend:wght@100..900&display=swap');
 
 body {
+    background-color: #0F0A15;
     margin: auto 0;
 }
+
+/* Header */
 
 header {
     font-family: 'Lexend';
@@ -10,20 +13,43 @@ header {
 
 #mainHeader {
     text-align: center;
-    background-color: #0873EE;
+    background-color: darkorange;
     width: 100%;
 }
+
+#headerLinkHolder {
+    margin: 10px 20px;
+}
+
+.headerLink {
+    padding: 5px;
+}
+
+/* Header Links */
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: white;
+}
+
+a:hover {
+    color: #0873EE;
+}
+
+/* Main */
 
 main {
     font-family: 'Funnel Sans';
 }
 
-#searchArea {
-    text-align: center;
-}
+/* Search Box */
 
-#searchBox {
-    margin: 0 0 50px 0;
+#searchArea {
+    color: white;
+    text-align: center;
 }
 
 #searchBoxLabel {
@@ -31,14 +57,24 @@ main {
     margin: 10px 0;
 }
 
+#searchBox {
+    margin: 0 0 50px 0;
+}
+
+/* Current Extremes Section */
+
 #extremeSection {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
 }
 
 #extremeTabHolder {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    color: black;
 }
 
 .extremeTab {
@@ -47,15 +83,20 @@ main {
     margin: 5px;
     border: 1px solid black;
     border-radius: 10px;
+    background-color: lightgrey;
     text-align: center;
 }
 
+/* Footer */
+
 footer {
     font-family: 'Funnel Sans';
+    color: white;
 }
 
-@media screen and (min-width: 850px){
+@media screen and (min-width: 900px){
     #extremeTabHolder {
         grid-template-columns: 1fr 1fr;
+        gap: 50px;
     }
 }
