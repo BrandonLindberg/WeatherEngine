@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Engine</title>
     <link rel="stylesheet" href="../CSS/styles.css">
-    <script src="../Scripts/api_handler.js"></script>
+    <script src="../Scripts/api_handler.js" defer></script>
 </head>
 <body>
     <header>
@@ -21,8 +21,8 @@
     <main>
         <div id="searchArea">
             <label id="searchBoxLabel" for="searchBox"><h3>Search for a location:</h3></label>
-            <input id="searchBox" type="text" placeholder="Location...">
-            <button id="searchButton" type="submit">Search</button>
+            <input id="searchBox" type="text" placeholder="Enter city, state, and country">
+            <button id="searchButton" type="button">Search</button>
         </div>
         <div id="extremeSection">
             <h3><i>Current Extremes:</i></h3>
