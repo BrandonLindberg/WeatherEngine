@@ -4,37 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Engine</title>
+    <link rel="icon" type="image/x-icon" href="../Images/favicon.ico">
     <link rel="stylesheet" href="../CSS/location-styles.css">
+    <script src="../Scripts/api_handler.js" defer></script>
 </head>
 <body>
     <header>
         <div id="mainHeader">
-            <h1>Weather Engine</h1>
+            <img src="../Images/weather_logo_white.png" alt="">
         </div>
-        <div class="headerLinks">
-            <a href="index.html">Home</a>
-            <a href="#">About</a>
-            <a href="#">Help</a>
+        <div id="headerLinkHolder">
+            <a class="headerLink" href="index.html">Home</a>
+            <a class="headerLink" href="#">About</a>
+            <a class="headerLink" href="#">Help</a>
         </div>
     </header>
     <main>
         <div id="conditionSection">
-            <p>Conditions for:</p>
-            <section id="conditionTabHolder">
-                <div class="conditionTab">
-                    <p>Current</p>
+            <h3 id="conditionsHeader">Placeholder Text</h3>
+            <section id="conditionsTabHolder">
+                <div class="conditionsTab">
                 </div>
-                <p>Forecast</p>
-                <div class="conditionTab">
+                <div class="conditionsTab">
                 </div>
-                <p>History</p>
-                <div class="conditionTab">
+                <div class="conditionsTab">
                 </div>
             </section>
         </div>
     </main>
     <footer>
-        <p>&copy 2025 Brandon Lindberg</p>
+        <div id="footerContent">
+            <p>&copy 2025 Brandon Lindberg</p>
+        </div>
     </footer>
 </body>
 </html>

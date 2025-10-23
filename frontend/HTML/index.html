@@ -6,7 +6,6 @@
     <title>Weather Engine</title>
     <link rel="icon" type="image/x-icon" href="../Images/favicon.ico">
     <link rel="stylesheet" href="../CSS/styles.css">
-    <script src="../Scripts/api_handler.js" defer></script>
 </head>
 <body>
     <header>
@@ -20,9 +19,11 @@
     </header>
     <main>
         <div id="searchArea">
-            <label id="searchBoxLabel" for="searchBox"><h3>Search for a location:</h3></label>
-            <input id="searchBox" type="text" placeholder="Enter city, state, and country">
-            <button id="searchButton" type="button">Search</button>
+            <form action="location-page.html" method="get">
+                <label id="searchBoxLabel" for="searchBox"><h3>Search for a location:</h3></label>
+                <input id="searchBox" type="text" placeholder="Enter city, state, and country" name="locationQuery" required>
+                <button id="searchButton" type="submit">Search</button>
+            </form>
         </div>
         <div id="extremeSection">
             <h3><i>Current Extremes:</i></h3>
@@ -33,12 +34,12 @@
                 <div class="extremeTab">
                     <p>Coldest Location</p>
                 </div>
-                <div class="extremeTab">
+                <!-- <div class="extremeTab">
                     <p>Wettest Location</p>
                 </div>
                 <div class="extremeTab">
                     <p>Windiest Location</p>
-                </div>
+                </div> -->
             </section>
         </div>
     </main>

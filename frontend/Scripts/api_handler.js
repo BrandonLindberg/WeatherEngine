@@ -1,8 +1,8 @@
 const apiKey = '';
 
-const submitButton = document.querySelector('#searchButton');
-
 const separators = /[,\s]+/;
+
+const conditionsHeader = document.getElementById('conditionsHeader');
 
 let cityName = '';
 let stateName = '';
@@ -10,9 +10,9 @@ let countryName = '';
 let queryString = '';
 
 // Take the location input and convert it into separate objects
-function convertInputToObjects () {
-    const searchQuery = document.getElementById('searchBox');
-    const inputValue = searchQuery.value.toUpperCase();
+window.onload = function convertInputToObjects () {
+    const locationQuery = new URLSearchParams(window.location.search).get('locationQuery');
+    const inputValue = locationQuery.valueOf().toUpperCase();
 
     const locationCode = inputValue.split(separators);
 
@@ -48,10 +48,11 @@ async function convertLocationToCords(query) {
         ('No location found');
     }
 
-    const {lat, lon} = data[0];
+    const {lat, lon, name, country, state} = data[0];
+
+    conditionsHeader.innerText = `Current conditions for ${name}, ${state}, ${country}`;
 
     getConditionsFromCoords(lat, lon);
-    console.log(`latitude: ${lat}, longitude: ${lon}`);
 }
 
 // Get current weather conditions for location from coordinates
@@ -67,7 +68,3 @@ async function getConditionsFromCoords(lat, lon) {
 
     console.log(data);
 }
-
-submitButton.addEventListener('click', () => {
-    convertInputToObjects();
-});
