@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="../Images/favicon.ico">
     <link rel="stylesheet" href="../CSS/location-styles.css">
     <script src="../Scripts/api_handler.js" defer></script>
+    <script src="../Scripts/render_conditions.js"></script>
 </head>
 <body>
     <header>
@@ -23,11 +24,29 @@
         <div id="conditionSection">
             <h3 id="conditionsHeader">Placeholder Text</h3>
             <section id="conditionsTabHolder">
-                <div class="conditionsTab">
+                <div id="conditionsTab">
+                    <div id="conditionDetails">
+                        <h3>Conditions</h3>
+                    </div>
+                    <div id="tempDetails">
+                        <h4>Temperature:</h4>
+                        <h4>Feels Like:</h4>
+                    </div>
+                    <div id="windDetails">
+                        <h4>Wind Speed:</h4>
+                        <h4>Wind Direction:</h4>
+                    </div>
+                    <div id="precipDetails">
+                        <h4>Precipitation</h4>
+                    </div>
+                    <div id="humidityDetails">
+                        <h4>Humidity:</h4>
+                        <h4>Dew Point:</h4>
+                    </div>
                 </div>
-                <div class="conditionsTab">
+                <div id="forecastTab">
                 </div>
-                <div class="conditionsTab">
+                <div id="historyTab">
                 </div>
             </section>
         </div>

@@ -36,19 +36,17 @@ function convertObjectsToString() {
 // Convert the location into coordinates
 async function convertLocationToCords(query) {
     const url = `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=1&appid=${apiKey}`;
-    const result = await fetch(url);
+    const geoResult = await fetch(url);
 
-    if (!result.ok) {
-        console.log(`HTTP ${result.status}: ${result.statusText}`);
+    if (!geoResult.ok) {
+        console.log(`HTTP ${geoResult.status}: ${geoResult.statusText}`);
     }
+    const geoData = await geoResult.json();
 
-    const data = await result.json();
-
-    if (!Array.isArray(data) || data.length === 0) {
+    if (!Array.isArray(geoData) || geoData.length === 0) {
         ('No location found');
     }
-
-    const {lat, lon, name, country, state} = data[0];
+    const {lat, lon, name, country, state} = geoData[0];
 
     conditionsHeader.innerText = `Current conditions for ${name}, ${state}, ${country}`;
 
@@ -57,14 +55,15 @@ async function convertLocationToCords(query) {
 
 // Get current weather conditions for location from coordinates
 async function getConditionsFromCoords(lat, lon) {
-    const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=hourly,daily,alerts&appid=${apiKey}`;
-    const result = await fetch(url);
+    const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly,daily,alerts&appid=${apiKey}`;
+    const resultData = await fetch(url);
 
-    if (!result.ok) {
-        console.log(`HTTP ${result.status}: ${result.statusText}`);
+    if (!resultData.ok) {
+        console.log(`HTTP ${resultData.status}: ${resultData.statusText}`);
     }
+    resultFinal = await resultData.json();
 
-    const data = await result.json();
+    window.weatherData = resultFinal;
 
-    console.log(data);
+    document.dispatchEvent(new CustomEvent('weatherDataReady', {detail: resultFinal}));
 }

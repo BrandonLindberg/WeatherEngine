@@ -70,13 +70,24 @@ main {
     color: black;
 }
 
-.conditionsTab {
+#conditionsTab, #forecastTab, #historyTab {
     width: 500px;
-    height: 350px;
-    margin: 5px;
+    height: 300px;
+    padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
     background-color: lightgrey;
+}
+
+#conditionsTab {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+#conditionDetails {
+    grid-column: 1 / 3;
     text-align: center;
 }
 
