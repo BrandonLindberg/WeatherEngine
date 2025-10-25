@@ -62,21 +62,21 @@ main {
     margin-bottom: 150px;
 }
 
-#conditionsTabHolder {
+#conditionsBoxHolder {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
     gap: 25px;
-    color: black;
 }
 
-#conditionsTab, #forecastTab, #historyTab {
+.conditionBox {
     width: 500px;
     height: 300px;
     padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
     background-color: lightgrey;
+    margin-bottom: 50px;
 }
 
 #conditionsTab {
@@ -85,6 +85,7 @@ main {
     grid-template-rows: 50px 100px 1fr;
     gap: 5px;
     text-align: center;
+    color: black;
 }
 
 #conditionDetails {

@@ -24,9 +24,9 @@
     </header>
     <main>
         <div id="conditionSection">
-            <h3 id="conditionsHeader">Placeholder Text</h3>
-            <section id="conditionsTabHolder">
-                <div id="conditionsTab">
+            <section class="conditionsBoxHolder">
+                <h3 id="conditionsHeader">Current conditions for</h3>
+                <div id="conditionsTab" class="conditionBox">
                     <!-- <div id="conditionDetails" class="conditionGridContent">
                         <h3>Conditions</h3>
                     </div>
@@ -46,11 +46,13 @@
                         <h4>Precipitation</h4>
                     </div> -->
                 </div>
-                <div id="forecastTab">
-                    <canvas id="forecastGraph"></canvas>
+                <h3>Temperature Forecast for Next 12 Hours</h3>
+                <div class="conditionBox">
+                    <canvas id="forecastHourlyGraph"></canvas>
                 </div>
-                <div id="historyTab">
-                    <canvas id="historyGraph"></canvas>
+                <h3>Temperature Forecast for Next 5 Days</h3>
+                <div class="conditionBox">
+                    <canvas id="forecastDailyGraph"></canvas>
                 </div>
             </section>
         </div>

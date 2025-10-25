@@ -4,28 +4,73 @@ document.addEventListener("weatherDataReady", (event) => {
 });
 
 function renderForecastGraph(data) {
-    const dailyTemps = data.daily.splice(0, 5);
+    const hourlyTempArray = data.hourly.slice(0, 12)
+    const dailyTemps = data.daily.slice(0, 6);
 
-    const days = ['tomorrow', 'next', 'next', 'next', 'next'];
-    const temps = [dailyTemps[0].temp.max,
-                dailyTemps[1].temp.max,
-                dailyTemps[2].temp.max,
-                dailyTemps[3].temp.max,
-                dailyTemps[4].temp.max];
+    const hours = Array.from({length: 12}, (_, index) => index + 1);
+    const hourlyTemps = hourlyTempArray.map(temps => temps.temp);
+
+    const days = ['today', 'tomorrow', 'next', 'next', 'next', 'next'];
+    const dailyTempMax = dailyTemps.map(dailyTemp => dailyTemp.temp.max);
     
+    const dailyTempMin = dailyTemps.map(dailyTemps => dailyTemps.temp.min);
+
+    // 12 hour forecast chart
     new Chart(
-        document.getElementById('forecastGraph'),
+        document.getElementById('forecastHourlyGraph'),
+        {
+            type: 'line',
+            data: {
+                labels: hours,
+                datasets: [{
+                    data: hourlyTemps,
+                    fill: false,
+                    borderColor: 'rgb(255, 136, 0)',
+                    tension: .5
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        }
+    )
+
+    // 5 day forecast chart
+    new Chart(
+        document.getElementById('forecastDailyGraph'),
         {
             type: 'line',
             data: {
                 labels: days,
                 datasets: [{
-                    label: '5 Day Forecast',
-                    data: temps,
+                    label: 'Max',
+                    data: dailyTempMax,
                     fill: false,
                     borderColor: 'rgb(255, 136, 0)',
                     tension: .2
+                },
+                {
+                    label: 'Min',
+                    data: dailyTempMin,
+                    fill: false,
+                    borderColor: 'rgb(0, 93, 255)',
+                    tension: .2
                 }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: true,
+                        labels: {
+                            boxWidth: 15,
+                            boxHeight: 1
+                        }
+                    }
+                }
             }
         }
     )
