@@ -55,7 +55,7 @@ async function convertLocationToCords(query) {
 
 // Get current weather conditions for location from coordinates
 async function getConditionsFromCoords(lat, lon) {
-    const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly,daily,alerts&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly,alerts&appid=${apiKey}`;
     const resultData = await fetch(url);
 
     if (!resultData.ok) {
